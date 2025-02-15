@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">{{ isEditMode ? 'Modifier le Logement' : 'Ajouter un Logement' }}</h2>
+  
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="reference" class="form-label">Référence :</label>
+        <input type="text" class="form-control" id="reference" [(ngModel)]="logement.reference" name="reference" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="adresse" class="form-label">Adresse :</label>
+        <input type="text" class="form-control" id="adresse" [(ngModel)]="logement.adresse" name="adresse" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="delegation" class="form-label">Délégation :</label>
+        <input type="text" class="form-control" id="delegation" [(ngModel)]="logement.delegation" name="delegation" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="gouvernorat" class="form-label">Gouvernorat :</label>
+        <input type="text" class="form-control" id="gouvernorat" [(ngModel)]="logement.gouvernorat" name="gouvernorat" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="type" class="form-label">Type :</label>
+        <input type="text" class="form-control" id="type" [(ngModel)]="logement.type" name="type" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description :</label>
+        <textarea class="form-control" id="description" [(ngModel)]="logement.description" name="description" required></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="prix" class="form-label">Prix (TND) :</label>
+        <input type="number" class="form-control" id="prix" [(ngModel)]="logement.prix" name="prix" required>
+      </div>
+  
+      <button type="submit" class="btn btn-success">
+        {{ isEditMode ? 'Mettre à Jour' : 'Ajouter' }}
+      </button>
+      <a class="btn btn-secondary ms-2" routerLink="/logements">Annuler</a>
+    </form>
+  </div>
+  

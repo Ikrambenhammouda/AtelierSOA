@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Liste des Logements</h2>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Référence</th>
+          <th>Adresse</th>
+          <th>Delegation</th>
+          <th>Gouvernorat</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Prix (TND)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let logement of logements">
+          <td>{{ logement.reference }}</td>
+          <td>{{ logement.adresse }}</td>
+          <td>{{ logement.delegation }}</td>
+          <td>{{ logement.gouvernorat }}</td>
+          <td>{{ logement.type }}</td>
+          <td>{{ logement.description }}</td>
+          <td>{{ logement.prix }} TND</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="modifierLogement(logement.reference)">Modifier</button>
+            <button class="btn btn-danger btn-sm ms-2" (click)="supprimerLogement(logement.reference)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
